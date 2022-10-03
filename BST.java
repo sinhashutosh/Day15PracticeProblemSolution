@@ -18,5 +18,7 @@ public class BST {
         myBinaryTree.addData(67);
         int size = myBinaryTree.getSize();
         System.out.println("size= " + size);
+        boolean element = myBinaryTree.search(63);
+        System.out.println(element);
     }
 }
