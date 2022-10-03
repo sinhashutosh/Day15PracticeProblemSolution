@@ -1,7 +1,7 @@
 package org.example;
 
 public class MyLinkedList<K> {
-    public INode<K> head;
+    public INode <K> head;
     public INode tail;
 
     public MyLinkedList() {
@@ -20,6 +20,19 @@ public class MyLinkedList<K> {
         }
     }
 
+    public INode delete(K key) {
+        INode<K> currentNode = head;
+        INode<K> previous = null;
+        while (currentNode != null && currentNode.getNext() != null) {
+            previous = currentNode;
+            if (currentNode.getKey().equals(key)) {
+                previous.setNext(currentNode.getNext());
+            }
+            currentNode =currentNode.getNext();
+        }
+        return currentNode;
+    }
+
     public INode<K> search(K key) {
         INode<K> node = head;
         while (node != null && node.getNext() != null) {
@@ -31,8 +44,8 @@ public class MyLinkedList<K> {
         return null;
     }
 
-//    @Override
-//    public String toString() {
-//        return "MyLinkedList [head=" + head + ", tail=" + tail + "]";
-//    }
+    @Override
+    public String toString() {
+        return "MyLinkedList [head=" + head + ", tail=" + tail + "]";
+    }
 }

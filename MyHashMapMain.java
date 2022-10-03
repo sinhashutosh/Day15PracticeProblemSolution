@@ -19,8 +19,11 @@ public class MyHashMapMain {
                 value = value + 1;
             myHashMap.add(word, value);
         }
-        int frequency = myHashMap.get("paranoid");
-       // System.out.println(myHashMap);
-        System.out.println("\n  Frequency of give word 'paranoid' is " + frequency);
+        System.out.println("Hash Map before deleting avoidable");
+        System.out.println(myHashMap);
+        System.out.println("*********************************");
+        myHashMap.removeKey("avoidable");
+        System.out.println("Hash Map after deleting avoidable");
+        System.out.println(myHashMap);
     }
 }
