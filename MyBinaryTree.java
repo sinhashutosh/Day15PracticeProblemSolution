@@ -4,19 +4,19 @@ public class MyBinaryTree<K extends Comparable<K>> {
     private MyBinaryNode<K> root;
 
     public void addData(K key) {
-        this.root = this.addRecursively(root, key);
+        this.root = this.addDataRecursively(root, key);
     }
 
-    private MyBinaryNode<K> addRecursively(MyBinaryNode<K> current, K key) {
+    private MyBinaryNode<K> addDataRecursively(MyBinaryNode<K> current, K key) {
         if (current == null)
             return new MyBinaryNode<K>(key);
         int compareResult = key.compareTo(current.key);
         if (compareResult == 0)
             return current;
         if (compareResult < 0) {
-            current.left = addRecursively(current.left, key);
+            current.left = addDataRecursively(current.left, key);
         } else {
-            current.right = addRecursively(current.right, key);
+            current.right = addDataRecursively(current.right, key);
         }
         return current;
     }
