@@ -6,19 +6,21 @@ public class MyHashMapMain {
     }
 
     private static void given_Sentence_When_Word_Are_Added_To_List_Should_Return_Word_Frequency() {
-        String sentance = "To be or not to be";
+        String sentence = "Paranoids are not paranoid because they are paranoid "
+                + "but because they keep putting themselves "
+                + "deliberately into paranoid avoidable situations";
         MyHashMap<String, Integer> myHashMap = new MyHashMap<>();
-        String[] word = sentance.toLowerCase().split(" ");
-        for (String itr : word) {
-            Integer value = myHashMap.get(itr);
+        String[] words = sentence.toLowerCase().split(" ");
+        for (String word : words) {
+            Integer value = myHashMap.get(word);
             if (value == null)
                 value = 1;
             else
                 value = value + 1;
-            myHashMap.add(itr, value);
+            myHashMap.add(word, value);
         }
-        int frequency = myHashMap.get("to");
-        System.out.println(myHashMap);
-        System.out.println("Frequency of give word 'to' is " + frequency);
+        int frequency = myHashMap.get("paranoid");
+       // System.out.println(myHashMap);
+        System.out.println("\n  Frequency of give word 'paranoid' is " + frequency);
     }
 }
